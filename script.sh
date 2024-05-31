@@ -29,5 +29,6 @@ docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_NAME:$VERSI
 kubectl set image deployment/$DEPLOYMENT_NAME $IMAGE_NAME=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_NAME:$VERSION_TAG -n $NAMESPACE
 # Deploy application to EKS
 kubectl apply -f deployment.yaml -n $NAMESPACE
+kubectl apply -f service.yaml -n $NAMESPACE
 
 
