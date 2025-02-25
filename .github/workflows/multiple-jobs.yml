@@ -13,6 +13,7 @@ jobs:
           run: |
            sudo apt-get install cowsay -y
            cowsay -f dragon "Hi i am a dragon leave me alone" >> dragon.txt
+
         - name: Upload a artifact
           uses: actions/upload-artifact@v4
           with:
@@ -30,8 +31,6 @@ jobs:
           with:
             name: dragon-txt-file
              
-        - name: checkout actions
-          uses: actions/checkout@v4
 
         - name: print 
           run: grep -i "dragon" dragon.txt
@@ -46,9 +45,8 @@ jobs:
           uses: actions/download-artifact@v4
           with:
               name: dragon-txt-file
-              
-        - name: checkout actions
-          uses: actions/checkout@v4
+
+        
 
         - name: list the job
           run: ls -la
