@@ -13,4 +13,5 @@ jobs:
             ls
             cat README.md
 
-        
+        - name: Generate the ascci code
+          run: cowsay -f dragon "Hi i am a dragon leave me alone" >> dragon.txt
