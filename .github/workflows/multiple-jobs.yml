@@ -4,6 +4,7 @@ on: push
 jobs: 
     first_jobs:
         runs-on: ubuntu-latest
+        
         steps:
         - name: checkout actions
           uses: actions/checkout@v4
@@ -16,6 +17,8 @@ jobs:
         
     second_job:
         runs-on: ubuntu-latest
+        needs: first_jobs
+
         steps:
         - name: checkout actions
           uses: actions/checkout@v4
@@ -25,6 +28,7 @@ jobs:
 
     third_job:
         runs-on: ubuntu-latest
+        needs: second_job
         steps:
         - name: checkout actions
           uses: actions/checkout@v4
