@@ -1,0 +1,20 @@
+name: Generate assci for cowsay
+on: push
+
+jobs: 
+    first_jobs:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout actions
+          uses: actions/checkout@v4
+
+        - name: install cowsay library
+          run: apt-get install cowsay -y
+
+        - name: Generate the ascci code
+          run: cowsay -f dragon "Hi i am a dragon leave me alone" >> dragon.txt
+
+        - name: list the file
+          run: ls -ltra
+        - name: print the result
+          run: cat dragon.txt
