@@ -8,9 +8,9 @@ jobs:
         - name: checkout actions
           uses: actions/checkout@v4
         - name: welcome message
-          run: echo "my name is waqas ahmad"
+          run: |
+            echo "my name is waqas ahmad"
+            ls
+            cat README.md
 
-        - name: list files
-          run: ls
-        - name: print readme file
-          run: cat README.md
+        
