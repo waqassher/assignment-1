@@ -9,7 +9,7 @@ jobs:
           uses: actions/checkout@v4
 
         - name: install cowsay library
-          run: apt-get install cowsay -y
+          run: sudo apt-get install cowsay -y
 
         - name: Generate the ascci code
           run: cowsay -f dragon "Hi i am a dragon leave me alone" >> dragon.txt
